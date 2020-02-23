@@ -1,0 +1,52 @@
+version: '3'
+services:
+
+  # API
+  ip-api:
+    build:
+      context: ..
+      dockerfile: ./docker/python/python.dockerfile
+    image: ip-api:20200223
+    container_name: ip-api
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8000:8000"
+    environment:
+      SERVICE_NAME: ${API_SERVICE_NAME}
+      SERVICE_TAGS: ${API_SERVICE_TAGS}
+    working_dir: /app
+    volumes:
+       - ${API_VOLUME}:/app
+    networks:
+      - app-network
+
+  # PerconaB Database
+  ip-db:
+    image: percona:latest
+    container_name: ip-db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASS}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
+      SERVICE_TAGS: ${DB_SERVICE_TAGS}
+      SERVICE_NAME:  ${DB_SERVICE_NAME}
+    volumes:
+      - ${DB_VOLUME}:/var/lib/mysql
+    networks:
+      - app-network
+
+# Docker Networks
+networks:
+  app-network:
+    driver: bridge
+
+# Volumes
+volumes:
+  dbdata:
+    driver: local

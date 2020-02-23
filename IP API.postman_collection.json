@@ -1,0 +1,470 @@
+{
+	"info": {
+		"_postman_id": "ea24d949-a6f3-4cda-b93c-18b8fdab4596",
+		"name": "IP API",
+		"description": "API API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add IP",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"ip\": \"127.0.0.1\",\n\t\"hostname\": \"localhost\",\n\t\"aliases\": [\n\t\t\"foo\",\n\t\t\"bar\",\n\t\t\"baz\"\n\t\t],\n\t\"category\": \"\",\n\t\"comment\": \"\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/ips?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Alias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"alias\": \"jetty\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/aliases/127.0.0.1?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"aliases",
+						"127.0.0.1"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update IP",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"hostname\": \"goon\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/ips/127.0.0.1?eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips",
+						"127.0.0.1"
+					],
+					"query": [
+						{
+							"key": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Alias",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"alias\": \"wetty\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/aliases/127.0.0.1/betty?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"aliases",
+						"127.0.0.1",
+						"betty"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete IP",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/ips/127.0.0.1?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips",
+						"127.0.0.1"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Alias",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/aliases/127.0.0.1/jetty?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"aliases",
+						"127.0.0.1",
+						"jetty"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List IPs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/ips?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Network IPs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/ips/network/172.18.207?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips",
+						"network",
+						"172.18.207"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Available IPs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/ips/network/172.18.207/available?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips",
+						"network",
+						"172.18.207",
+						"available"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Generate Hosts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/hosts?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"hosts"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get IP",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/ips/127.0.0.1?access_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ips",
+						"127.0.0.1"
+					],
+					"query": [
+						{
+							"key": "access_token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFuc2libGUifQ.2HSPf_3lp_AJIftsbf-jCTsTRBwuqcwD8KSIcLb30mE"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Version (Index)",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "226896b9-4fc6-4641-9ff7-9f9d7a640d5d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "5b271426-31bb-458a-8ace-38c09c9600ab",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "392d80c0-57dc-4950-84d8-9a7812d3334e",
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000",
+			"type": "string"
+		}
+	]
+}
