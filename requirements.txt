@@ -5,4 +5,4 @@ boddle==0.2.8
 mysqlclient==1.4.6
 yoyo-migrations==6.1.0
 pymysql==0.9.3
-requests==2.22.0
+requests==2.31.0
